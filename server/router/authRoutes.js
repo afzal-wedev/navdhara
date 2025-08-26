@@ -24,8 +24,13 @@ authRouter.post("/logout", logoutUser);
 // Google OAuth
 authRouter.get("/google", passport.authenticate("google", { scope: ["profile", "email"] })
 );
-authRouter.get("/google/callback", passport.authenticate("google", { session: false }), 
-googleCallback);
+
+authRouter.get(
+  "/google/callback",
+  passport.authenticate("google", { session: false }),
+  googleCallback
+);
+
 
 
 // Forgot Password

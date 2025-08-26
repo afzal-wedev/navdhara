@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import { AppContent } from '../context/AppContext';
 
-export default function Navbar() {
+ const  Navbar =()=> {
   const navigate = useNavigate();
   const { userData, backendUrl, setUserData, setIsLoggedIn } = useContext(AppContent);
 
@@ -31,7 +31,7 @@ export default function Navbar() {
       <div>
         {userData ? (
           <div className="w-8 h-8 flex justify-center items-center rounded-full bg-gray-800 cursor-pointer text-gray-100 relative group">
-            {userData.name[0].toUpperCase()}
+            {/* {userData.name[0].toUpperCase()} */}
             <div className="absolute hidden group-hover:block top-5 right-0 z-10 bg-white text-black rounded shadow-lg mt-2">
               <ul className="text-sm p-2 space-y-1 list-none">
                 <li onClick={logout} className="hover:text-blue-500 cursor-pointer">
@@ -52,3 +52,4 @@ export default function Navbar() {
     </nav>
   );
 }
+export default Navbar;

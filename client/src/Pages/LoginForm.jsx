@@ -23,6 +23,7 @@ const LoginForm = () => {
         { withCredentials: true } // cookies allow
       );
 
+console.log(res.data.user);
       // Update App context
       setUserData(res.data.user);
       setIsLoggedIn(true);
@@ -36,8 +37,11 @@ const LoginForm = () => {
     }
   };
 
-  const handleGoogleLogin = () => {
+  const handleGoogleLogin = (e) => {
+    e.preventDefault()
+  
     window.location.href = `${backendUrl}/auth/google`;
+  
   };
 
   return (

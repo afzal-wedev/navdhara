@@ -8,7 +8,7 @@ const token = req.cookies.token;
 
   try {
     const decoded = verifyToken(token); // decode the JWT
-    req.user = decoded; // should contain { id, email }
+    req.user = {_id:decoded._id,email:decoded.email}; // should contain { id, email }
     next();
   } catch (e) {
     return res.status(401).json({ message: "Invalid/expired token" });
