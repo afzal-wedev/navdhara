@@ -7,6 +7,7 @@ import { setupGoogleStrategy } from "./config/passport.js";
 import passport from "passport";
 import cookieParser from "cookie-parser";
 import { ressumeRouter } from "./router/resumeValidate.js";
+import sttRoute from './router/stt-route.js'
 import { genAI } from "./services/gemiservices.js";
 
 
@@ -27,6 +28,8 @@ setupGoogleStrategy();
 const PORT = process.env.PORT || 5000;
 app.use("/auth", authRouter);
 app.use("/resume",ressumeRouter)
+app.use('/api' ,  sttRoute);
+
 let chatSessions = {};
 //chat interview 
 

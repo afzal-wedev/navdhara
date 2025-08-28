@@ -11,6 +11,7 @@ import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import { ResumeUpload } from './Pages/ResumeUpload';
 import Chat from './Pages/chat';
+import VoiceRecorder from './components/VoiceRecorder';
 
 function AppRoutes() {
   const { setUserData, setIsLoggedIn, backendUrl } = useContext(AppContent);
@@ -44,6 +45,7 @@ function AppRoutes() {
         <Route path="/forgotpassword" element={<ForgotPasswordForm />} />
          <Route path="/resumeFeedback" element={<ResumeUpload />} />
            <Route path="/chat" element={<Chat />} />
+           <Route path="/voicerecorder" element={<VoiceRecorder/>}/>
         {/* future routes add here */}
       </Routes>
     </>
